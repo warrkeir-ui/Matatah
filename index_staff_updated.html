@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakuna Matatah Preschool & Childcare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@300;400;600;700&display=swap');
+        
+        .jungle-font { font-family: 'Fredoka One', cursive; }
+        .body-font { font-family: 'Nunito', sans-serif; }
+        
+        .jungle-gradient {
+            background: linear-gradient(135deg, #8B4513 0%, #DAA520 25%, #228B22 50%, #32CD32 75%, #FFD700 100%);
+        }
+        
+        .leaf-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23228B22' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .bounce-slow {
+            animation: bounce 3s infinite;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hidden { display: none; }
+        .active-page { display: block; }
+    </style>
+</head>
+<body class="body-font bg-green-50 leaf-pattern">
+    <!-- Navigation -->
+    <nav class="jungle-gradient shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="text-4xl">🦁</div>
+                    <div>
+                        <h1 class="jungle-font text-2xl md:text-3xl text-white">Hakuna Matatah</h1>
+                        <p class="text-yellow-200 text-sm">Preschool & Childcare</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-6">
+                    <button onclick="showPage('welcome')" class="nav-btn text-white hover:text-yellow-300 transition-colors font-semibold">Home</button>
+                    <button onclick="showPage('enrollment')" class="nav-btn text-white hover:text-yellow-300 transition-colors font-semibold">Enrollment</button>
+                    <button onclick="showPage('classrooms')" class="nav-btn text-white hover:text-yellow-300 transition-colors font-semibold">Classrooms</button>
+                    <button onclick="showPage('calendar')" class="nav-btn text-white hover:text-yellow-300 transition-colors font-semibold">Calendar & Gallery</button>
+                    <button onclick="showPage('staff')" class="nav-btn text-white hover:text-yellow-300 transition-colors font-semibold">Staff</button>
+                    <button onclick="showPage('contact')" class="nav-btn text-white hover:text-yellow-300 transition-colors font-semibold">Contact</button>
+                </div>
+                
+                <button onclick="toggleMobileMenu()" class="md:hidden text-white text-2xl">☰</button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <button onclick="showPage('welcome')" class="nav-btn text-white hover:text-yellow-300 transition-colors font-semibold text-left">Home</button>
+                    <button onclick="showPage('enrollment')" class="nav-btn text-white hover:text-yellow-300 transition-colors font-semibold text-left">Enrollment</button>
+                    <button onclick="showPage('classrooms')" class="nav-btn text-white hover:text-yellow-300 transition-colors font-semibold text-left">Classrooms</button>
+                    <button onclick="showPage('calendar')" class="nav-btn text-white hover:text-yellow-300 transition-colors font-semibold text-left">Calendar & Gallery</button>
+                    <button onclick="showPage('staff')" class="nav-btn text-white hover:text-yellow-300 transition-colors font-semibold text-left">Staff</button>
+                    <button onclick="showPage('contact')" class="nav-btn text-white hover:text-yellow-300 transition-colors font-semibold text-left">Contact</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome Page -->
+    <div id="welcome" class="page active-page">
+        <!-- Hero Section -->
+        <section class="jungle-gradient text-white py-20">
+            <div class="max-w-6xl mx-auto px-4 text-center">
+                <h1 class="jungle-font text-5xl md:text-7xl mb-6 bounce-slow">🦁 Hakuna Matatah! 🌿</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Where every day is an adventure in learning, growing, and discovering the circle of life!</p>
+                <button onclick="showPage('enrollment')" class="bg-yellow-500 hover:bg-yellow-600 text-brown-800 font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105">
+                    🌟 Start Your Journey Today!
+                </button>
+            </div>
+        </section>
+
+        <!-- School Picture Section -->
+        <section class="py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="jungle-font text-4xl text-center text-green-800 mb-12">Welcome to Our Jungle! 🏫</h2>
+                <div class="bg-gradient-to-r from-green-100 to-yellow-100 rounded-3xl p-8 shadow-xl">
+                    <div class="flex flex-col lg:flex-row items-center gap-8">
+                        <div class="lg:w-1/2">
+                            <div class="bg-green-200 rounded-2xl p-2 text-center">
+                                <img src="images/school.jpeg" alt="Hakuna Matatah Preschool Building" class="w-full h-64 object-cover rounded-xl shadow-lg">
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <h3 class="jungle-font text-3xl text-green-800 mb-4">Our Beautiful Campus</h3>
+                            <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                                Nestled in a safe and nurturing environment, our preschool provides the perfect setting for your little cubs to explore, learn, and grow. Our facilities are designed with children's safety and development in mind.
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <span class="bg-green-200 text-green-800 px-3 py-1 rounded-full text-sm">🌳 Outdoor Playground</span>
+                                <span class="bg-yellow-200 text-yellow-800 px-3 py-1 rounded-full text-sm">📚 Learning Centers</span>
+                                <span class="bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-sm">🎨 Art Studios</span>
+                                <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm">🍎 Healthy Kitchen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet the Director -->
+        <section class="py-16 bg-gradient-to-r from-yellow-100 to-orange-100">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="jungle-font text-4xl text-center text-orange-800 mb-12">Meet Our Pride Leader 👑</h2>
+                <div class="bg-white rounded-3xl shadow-xl p-8">
+                    <div class="flex flex-col lg:flex-row items-center gap-8">
+                        <div class="lg:w-1/3">
+                            <div class="w-48 h-48 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-yellow-300">
+                                <img src="images/Stefanie.jpeg" alt="Stefanie Boyd - Owner & Director" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div class="lg:w-2/3">
+                            <h3 class="jungle-font text-3xl text-orange-800 mb-2">Stefanie Boyd</h3>
+                            <p class="text-orange-600 text-xl mb-4">Owner & Director</p>
+                            <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                                "Welcome to our Hakuna Matata family! With over 20 years of experience in early childhood education, I believe every child deserves a place where they can grow, learn, and discover their unique talents. Our jungle-themed environment creates a magical space where learning comes naturally through play and exploration."
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-green-100 p-4 rounded-lg">
+                                    <div class="text-2xl mb-2">🎓</div>
+                                    <p class="font-semibold text-green-800">CDA Certified</p>
+                                </div>
+                                <div class="bg-yellow-100 p-4 rounded-lg">
+                                    <div class="text-2xl mb-2">⭐</div>
+                                    <p class="font-semibold text-yellow-800">20+ Years Experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-16 bg-green-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="jungle-font text-4xl text-center text-green-800 mb-12">What Our Pride Says 💬</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="text-4xl mb-4">🦁</div>
+                        <p class="text-gray-700 mb-4 italic">"We couldn't be happier with our experience at Hakuna Matata Preschool & Child Care Center. Our daughter, Kali, absolutely loves coming to school every day, and we are so impressed with how much she has grown and learned. The staff is incredibly welcoming and nurturing, creating a truly special environment. We are so grateful and wholeheartedly recommend them to any family."</p>
+                        <div class="border-t pt-4">
+                            <p class="font-semibold text-green-800">- The Tarpley Family</p>
+                            <p class="text-sm text-gray-600">Kali's Parents</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="text-4xl mb-4">🌟</div>
+                        <p class="text-gray-700 mb-4 italic">"As a working mom of 4, finding a center that could accommodate my unpredictable hours was a huge challenge—until we found Hakuna Matatah. The flexibility has been a lifesaver, and the after-care program has been incredibly beneficial for my kids. They love it here, and so do I!"</p>
+                        <div class="border-t pt-4">
+                            <p class="font-semibold text-green-800">- Marylin H.</p>
+                            <p class="text-sm text-gray-600">Working Mom of 4</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="text-4xl mb-4">❤️</div>
+                        <p class="text-gray-700 mb-4 italic">"Amazing school, my kids love it there."</p>
+                        <div class="border-t pt-4">
+                            <p class="font-semibold text-green-800">- Ashley A.</p>
+                            <p class="text-sm text-gray-600">Parent</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="text-4xl mb-4">🤗</div>
+                        <p class="text-gray-700 mb-4 italic">"Kind to parents and children."</p>
+                        <div class="border-t pt-4">
+                            <p class="font-semibold text-green-800">- Tiffany M.</p>
+                            <p class="text-sm text-gray-600">Parent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Enrollment Page -->
+    <div id="enrollment" class="page hidden">
+        <section class="py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h1 class="jungle-font text-5xl text-center text-green-800 mb-12">Join Our Pride! 🦁</h1>
+                
+                <!-- Enrollment Process -->
+                <div class="bg-white rounded-3xl shadow-xl p-8 mb-12">
+                    <h2 class="jungle-font text-3xl text-orange-800 mb-8 text-center">Enrollment Process 📋</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="bg-green-100 rounded-full w-20 h-20 mx-auto flex items-center justify-center text-3xl mb-4">1️⃣</div>
+                            <h3 class="font-bold text-lg mb-2">Submit Application</h3>
+                            <p class="text-gray-600">Complete and submit your enrollment packet with required documents</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-yellow-100 rounded-full w-20 h-20 mx-auto flex items-center justify-center text-3xl mb-4">2️⃣</div>
+                            <h3 class="font-bold text-lg mb-2">Schedule Tour</h3>
+                            <p class="text-gray-600">Visit our jungle campus and meet our amazing teaching staff</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-orange-100 rounded-full w-20 h-20 mx-auto flex items-center justify-center text-3xl mb-4">3️⃣</div>
+                            <h3 class="font-bold text-lg mb-2">Welcome to the Pride!</h3>
+                            <p class="text-gray-600">Complete enrollment and start your child's amazing journey</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing -->
+                <div class="bg-gradient-to-r from-green-100 to-yellow-100 rounded-3xl shadow-xl p-8 mb-12">
+                    <h2 class="jungle-font text-3xl text-green-800 mb-8 text-center">Tuition & Fees 💰</h2>
+                    
+                    <!-- Full-Time Weekly Rates -->
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-white rounded-2xl p-6 text-center shadow-lg">
+                            <div class="text-4xl mb-4">🍼</div>
+                            <h3 class="jungle-font text-xl text-green-800 mb-2">Infants</h3>
+                            <p class="text-sm text-gray-600 mb-2">1.5 years and under</p>
+                            <p class="text-3xl font-bold text-green-600 mb-2">$275</p>
+                            <p class="text-gray-600 text-sm mb-4">per week (5 days)</p>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• 6 weeks - 1.5 years</li>
+                                <li>• Licensed teacher ratios</li>
+                                <li>• All meals included</li>
+                                <li>• Individual care plans</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-6 text-center shadow-lg">
+                            <div class="text-4xl mb-4">🐾</div>
+                            <h3 class="jungle-font text-xl text-orange-800 mb-2">Toddlers</h3>
+                            <p class="text-sm text-gray-600 mb-2">2.5 years and under</p>
+                            <p class="text-3xl font-bold text-orange-600 mb-2">$225</p>
+                            <p class="text-gray-600 text-sm mb-4">per week (5 days)</p>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• 1.5 - 2.5 years</li>
+                                <li>• Licensed teacher ratios</li>
+                                <li>• All meals included</li>
+                                <li>• Potty training support</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-6 text-center shadow-lg">
+                            <div class="text-4xl mb-4">🐗</div>
+                            <h3 class="jungle-font text-xl text-red-800 mb-2">Preschoolers</h3>
+                            <p class="text-sm text-gray-600 mb-2">3 years and older</p>
+                            <p class="text-3xl font-bold text-red-600 mb-2">$200</p>
+                            <p class="text-gray-600 text-sm mb-4">per week (5 days)</p>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• 3 - 5 years</li>
+                                <li>• Licensed teacher ratios</li>
+                                <li>• All meals included</li>
+                                <li>• Kindergarten prep</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Drop-In Rates -->
+                    <div class="bg-white rounded-2xl p-6 mb-8">
+                        <h3 class="jungle-font text-2xl text-center text-blue-800 mb-6">Drop-In Daily Rates 📅</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="text-center bg-blue-50 p-4 rounded-lg">
+                                <div class="text-3xl mb-2">🐗</div>
+                                <h4 class="font-bold text-lg">Preschoolers (3+ years)</h4>
+                                <p class="text-2xl font-bold text-blue-600">$60</p>
+                                <p class="text-sm text-gray-600">per 8-hour day</p>
+                            </div>
+                            <div class="text-center bg-green-50 p-4 rounded-lg">
+                                <div class="text-3xl mb-2">🍼</div>
+                                <h4 class="font-bold text-lg">Infants & Toddlers</h4>
+                                <p class="text-2xl font-bold text-green-600">$75</p>
+                                <p class="text-sm text-gray-600">per 8-hour day</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-yellow-50 p-4 rounded-lg">
+                            <p class="text-sm text-gray-700 text-center">
+                                <strong>Note:</strong> Drop-in families do not hold a daily spot. Please call ahead for availability. 
+                                Extended hours available at different rates.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Policies -->
+                    <div class="bg-white rounded-2xl p-6 mb-8">
+                        <h3 class="jungle-font text-2xl text-center text-purple-800 mb-6">Payment Policies 💳</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div class="bg-purple-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-purple-800 mb-2">📅 Payment Schedule</h4>
+                                    <ul class="text-sm text-gray-700 space-y-1">
+                                        <li>• Tuition due every Monday</li>
+                                        <li>• Billing processed on Tuesday</li>
+                                        <li>• Late fees apply if not paid on time</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-red-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-red-800 mb-2">⚠️ Late Fees</h4>
+                                    <ul class="text-sm text-gray-700 space-y-1">
+                                        <li>• Tuesday: $35.00 late fee</li>
+                                        <li>• Wednesday: Additional $50.00</li>
+                                        <li>• Total late fee: $85.00</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-green-800 mb-2">💰 Accepted Payments</h4>
+                                    <ul class="text-sm text-gray-700 space-y-1">
+                                        <li>• Cash</li>
+                                        <li>• Debit cards</li>
+                                        <li>• Checks (see policy below)</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-orange-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-orange-800 mb-2">📝 Check Policy</h4>
+                                    <ul class="text-sm text-gray-700 space-y-1">
+                                        <li>• Returned checks: $35.00 NSF fee</li>
+                                        <li>• No future checks accepted after NSF</li>
+                                        <li>• Cash/debit only after returned check</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Fees -->
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="jungle-font text-2xl text-center text-orange-800 mb-6">Additional Fees & Policies 📋</h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="text-center bg-orange-50 p-4 rounded-lg">
+                                <div class="text-3xl mb-2">📝</div>
+                                <h4 class="font-bold">Registration Fee</h4>
+                                <p class="text-2xl font-bold text-orange-600">$60</p>
+                                <p class="text-sm text-gray-600 mt-2">Waived if contract signed after tour!</p>
+                            </div>
+                            
+                            <div class="text-center bg-red-50 p-4 rounded-lg">
+                                <div class="text-3xl mb-2">⏰</div>
+                                <h4 class="font-bold">Late Pickup</h4>
+                                <p class="text-2xl font-bold text-red-600">$5</p>
+                                <p class="text-sm text-gray-600 mt-2">per minute after contract time</p>
+                            </div>
+                            
+                            <div class="text-center bg-blue-50 p-4 rounded-lg">
+                                <div class="text-3xl mb-2">🏛️</div>
+                                <h4 class="font-bold">DHS Recipients</h4>
+                                <p class="text-lg font-bold text-blue-600">Copays</p>
+                                <p class="text-sm text-gray-600 mt-2">Responsible for copays to cover tuition agreements</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-yellow-800 mb-2">🕐 Hours of Operation</h4>
+                            <p class="text-gray-700">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                            <p class="text-sm text-gray-600 italic">Extended hours available for families in need (rates may vary)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download Packet -->
+                <div class="text-center">
+                    <div class="bg-white rounded-3xl shadow-xl p-8">
+                        <h2 class="jungle-font text-3xl text-green-800 mb-6">Ready to Enroll? 📄</h2>
+                        <p class="text-lg text-gray-700 mb-8">Download our complete enrollment packet to get started on your child's jungle adventure!</p>
+                        <button onclick="downloadEnrollmentPacket()" class="bg-gradient-to-r from-green-500 to-yellow-500 hover:from-green-600 hover:to-yellow-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 shadow-lg">
+                            📥 Download Enrollment Packet
+                        </button>
+                        <p class="text-sm text-gray-600 mt-4">Includes application, health forms, emergency contacts, and policies</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Classrooms Page -->
+    <div id="classrooms" class="page hidden">
+        <section class="py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h1 class="jungle-font text-5xl text-center text-green-800 mb-12">Our Jungle Classrooms 🌿</h1>
+                
+                <!-- Classroom Navigation -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button onclick="showClassroom('simba')" class="classroom-nav bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-colors">🍼 Simba (Infants)</button>
+                    <button onclick="showClassroom('timon')" class="classroom-nav bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition-colors">🐾 Timon (Toddlers)</button>
+                    <button onclick="showClassroom('pumba')" class="classroom-nav bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full font-semibold transition-colors">🐗 Pumba (Preschool)</button>
+                    <button onclick="showClassroom('zazu')" class="classroom-nav bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-semibold transition-colors">🦜 Zazu (After Care)</button>
+                </div>
+
+                <!-- Simba Classroom -->
+                <div id="simba-classroom" class="classroom-content">
+                    <div class="bg-gradient-to-r from-green-100 to-green-200 rounded-3xl shadow-xl p-8">
+                        <div class="text-center mb-8">
+                            <div class="text-6xl mb-4">🍼</div>
+                            <h2 class="jungle-font text-4xl text-green-800">Infant & Toddler Learning Journey</h2>
+                            <p class="text-xl text-green-700">Under 33 Months</p>
+                        </div>
+                        
+                        <div class="flex flex-col lg:flex-row gap-8">
+                            <!-- Side Navigation -->
+                            <div class="lg:w-1/4">
+                                <div class="bg-white rounded-2xl p-4 sticky top-24">
+                                    <h3 class="jungle-font text-lg text-green-800 mb-4">Learning Sections</h3>
+                                    <div class="space-y-2">
+                                        <button onclick="showInfantSection('schedule')" class="infant-nav-btn w-full text-left px-4 py-3 rounded-lg bg-green-500 text-white font-semibold transition-colors">📅 Daily Schedule</button>
+                                        <button onclick="showInfantSection('curriculum')" class="infant-nav-btn w-full text-left px-4 py-3 rounded-lg bg-gray-200 text-gray-700 hover:bg-green-100 font-semibold transition-colors">📚 Learning Focus</button>
+                                        <button onclick="showInfantSection('development')" class="infant-nav-btn w-full text-left px-4 py-3 rounded-lg bg-gray-200 text-gray-700 hover:bg-green-100 font-semibold transition-colors">🌱 Development</button>
+                                        <button onclick="showInfantSection('activities')" class="infant-nav-btn w-full text-left px-4 py-3 rounded-lg bg-gray-200 text-gray-700 hover:bg-green-100 font-semibold transition-colors">🎨 Activities</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Main Content Area -->
+                            <div class="lg:w-3/4">
+                                <!-- Daily Schedule Section -->
+                                <div id="infant-schedule" class="infant-section">
+                                    <div class="bg-white rounded-2xl p-6">
+                                        <h3 class="jungle-font text-2xl text-green-800 mb-4">Our Little Explorers' Daily Adventure 🌟</h3>
+                                        <p class="text-gray-600 mb-6 italic">8:00 AM - 6:00 PM</p>
+                                        
+                                        <div class="space-y-4">
+                                            <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-yellow-800">🌞 8:00 AM - 8:30 AM</span>
+                                                    <span class="text-yellow-600 font-medium">Good Morning, Little Ones!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Arrival & Gentle Welcome:</strong> Hugs and hellos as our friends arrive!</li>
+                                                    <li>• <strong>Quiet Play:</strong> Soft toys and books for a calm start to the day</li>
+                                                    <li>• <strong>Diaper Check/Potty Time:</strong> Quick checks and potty opportunities for our growing toddlers</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-orange-800">🥣 8:30 AM - 9:00 AM</span>
+                                                    <span class="text-orange-600 font-medium">Yummy Breakfast Time!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Meal Time:</strong> A nutritious breakfast to fuel our morning adventures</li>
+                                                    <li>• <strong>Clean Hands:</strong> Washing up before and after our meal!</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-blue-800">👶 9:00 AM - 9:30 AM</span>
+                                                    <span class="text-blue-600 font-medium">Fresh & Clean!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Diaper Change & Potty Training:</strong> Time for fresh diapers and consistent potty practice</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-green-800">📚 9:30 AM - 10:15 AM</span>
+                                                    <span class="text-green-600 font-medium">Learning & Laughter!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Circle Time (15-20 min):</strong> Songs, stories, and morning greetings to spark language and friendships</li>
+                                                    <li>• <strong>Lesson Activity (20-25 min):</strong></li>
+                                                    <li class="ml-4">- <em>Infants:</em> Tummy time fun and gentle sensory exploration</li>
+                                                    <li class="ml-4">- <em>Toddlers:</em> Discovering shapes, colors, and simple counting through play</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-purple-800">🤸‍♀️ 10:15 AM - 10:45 AM</span>
+                                                    <span class="text-purple-600 font-medium">Wiggle & Giggle!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Outdoor Play (weather permitting):</strong> Fresh air and big movements like crawling, walking, and pushing toys!</li>
+                                                    <li>• <strong>Indoor Fun:</strong> If we're inside, we'll enjoy soft obstacle courses and dancing!</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-pink-800">🍎 10:45 AM - 11:15 AM</span>
+                                                    <span class="text-pink-600 font-medium">Snack & Sips!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Snack Time:</strong> A healthy bite to keep our energy up!</li>
+                                                    <li>• <strong>Hydration:</strong> Sips of water for everyone</li>
+                                                    <li>• <strong>Clean Hands:</strong> Washing up again!</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-red-800">🎨 11:15 AM - 11:45 AM</span>
+                                                    <span class="text-red-600 font-medium">Creative Corner!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Arts & Crafts / Sensory Play:</strong> Get ready for some messy, wonderful fun!</li>
+                                                    <li class="ml-4">- <em>Infants:</em> Edible paints and water play</li>
+                                                    <li class="ml-4">- <em>Toddlers:</em> Scribbling, playdough, and simple collages – exploring with our hands!</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-indigo-800">🤫 11:45 AM - 12:00 PM</span>
+                                                    <span class="text-indigo-600 font-medium">Wind-Down & Freshen Up!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Diaper Change & Potty Training:</strong> Another chance to get clean and practice potty skills</li>
+                                                    <li>• <strong>Quiet Transition:</strong> Gentle activities like looking at books to prepare for lunch</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-teal-50 p-4 rounded-lg border-l-4 border-teal-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-teal-800">🍽️ 12:00 PM - 12:45 PM</span>
+                                                    <span class="text-teal-600 font-medium">Delicious Lunch!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Meal Time:</strong> A wholesome lunch, encouraging independence with our utensils</li>
+                                                    <li>• <strong>Clean Hands:</strong> You guessed it – more handwashing!</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-gray-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-gray-800">😴 12:45 PM - 1:00 PM</span>
+                                                    <span class="text-gray-600 font-medium">Sweet Dreams Prep!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Nap Preparation:</strong> Lights dim, soft voices, and cozy spaces for rest</li>
+                                                    <li>• <strong>Story Time:</strong> Calming stories to help us drift off to sleep</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-slate-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-slate-800">💤 1:00 PM - 3:00 PM</span>
+                                                    <span class="text-slate-600 font-medium">Nap Time / Quiet Rest!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Sleep/Rest:</strong> A peaceful time for naps or quiet activities if we're not sleepy</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-emerald-50 p-4 rounded-lg border-l-4 border-emerald-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-emerald-800">👋 3:00 PM - 3:30 PM</span>
+                                                    <span class="text-emerald-600 font-medium">Rise & Shine!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Wake Up:</strong> Gentle waking and stretching!</li>
+                                                    <li>• <strong>Diaper Change & Potty Training:</strong> Time to get fresh again</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-rose-50 p-4 rounded-lg border-l-4 border-rose-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-rose-800">🍓 3:30 PM - 4:00 PM</span>
+                                                    <span class="text-rose-600 font-medium">Afternoon Boost!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Afternoon Snack:</strong> Another yummy snack and water</li>
+                                                    <li>• <strong>Free Play:</strong> Exploring toys, building blocks, and imaginative play</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-cyan-50 p-4 rounded-lg border-l-4 border-cyan-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-cyan-800">🧠 4:00 PM - 4:45 PM</span>
+                                                    <span class="text-cyan-600 font-medium">Little Hands Learning!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Structured Play / Fine Motor Skills:</strong></li>
+                                                    <li class="ml-4">- <em>Infants:</em> Reaching and grasping for toys, exploring textures</li>
+                                                    <li class="ml-4">- <em>Toddlers:</em> Stacking, threading, and matching games to strengthen our little fingers and minds!</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-violet-50 p-4 rounded-lg border-l-4 border-violet-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-violet-800">💧 4:45 PM - 5:15 PM</span>
+                                                    <span class="text-violet-600 font-medium">Last Call for Freshness!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Diaper Change & Potty Training:</strong> Our final scheduled check before going home</li>
+                                                    <li>• <strong>Outdoor Play (Optional):</strong> A quick dash outside if there's time and good weather!</li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-400">
+                                                <div class="flex items-center justify-between mb-2">
+                                                    <span class="font-semibold text-amber-800">🧸 5:15 PM - 6:00 PM</span>
+                                                    <span class="text-amber-600 font-medium">Cozy Goodbyes!</span>
+                                                </div>
+                                                <ul class="text-sm text-gray-700 space-y-1">
+                                                    <li>• <strong>Quiet Play:</strong> Books, soft music, and calm activities as we await our grown-ups</li>
+                                                    <li>• <strong>Dismissal:</strong> Time to go home and share all about our fun day!</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Learning Focus Section -->
+                                <div id="infant-curriculum" class="infant-section hidden">
+                                    <div class="bg-white rounded-2xl p-6">
+                                        <h3 class="jungle-font text-2xl text-green-800 mb-4">Learning Focus 📚</h3>
+                                        <div class="space-y-4">
+                                            <div class="bg-green-50 p-4 rounded-lg">
+                                                <h4 class="font-semibold text-green-800 mb-2">🤱 Nurturing Care</h4>
+                                                <p class="text-sm">Individual feeding, sleeping, and diaper schedules tailored to each baby's needs</p>
+                                            </div>
+                                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                                <h4 class="font-semibold text-yellow-800 mb-2">👶 Sensory Development</h4>
+                                                <p class="text-sm">Age-appropriate toys, textures, and activities to stimulate the senses</p>
+                                            </div>
+                                            <div class="bg-blue-50 p-4 rounded-lg">
+                                                <h4 class="font-semibold text-blue-800 mb-2">🗣️ Language Exposure</h4>
+                                                <p class="text-sm">Constant talking, singing, and reading to promote early language development</p>
+                                            </div>
+                                            <div class="bg-orange-50 p-4 rounded-lg">
+                                                <h4 class="font-semibold text-orange-800 mb-2">💪 Motor Skills</h4>
+                                                <p class="text-sm">Tummy time, reaching activities, and safe exploration opportunities</p>
+                                            </div>
+                                            <div class="bg-purple-50 p-4 rounded-lg">
+                                                <h4 class="font-semibold text-purple-800 mb-2">❤️ Emotional Security</h4>
+                                                <p class="text-sm">Consistent caregivers providing love, comfort, and responsive care</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Development Section -->
+                                <div id="infant-development" class="infant-section hidden">
+                                    <div class="bg-white rounded-2xl p-6">
+                                        <h3 class="jungle-font text-2xl text-green-800 mb-4">Development Milestones 🌱</h3>
+                                        <div class="grid md:grid-cols-2 gap-6">
+                                            <div class="bg-blue-50 p-4 rounded-lg">
+                                                <h4 class="font-semibold text-blue-800 mb-3">👶 Infants (6 weeks - 12 months)</h4>
+                                                <ul class="text-sm text-gray-700 space-y-2">
+                                                    <li>• Tummy time and head control</li>
+                                                    <li>• Reaching and grasping objects</li>
+                                                    <li>• Rolling, sitting, crawling</li>
+                                                    <li>• First words and babbling</li>
+                                                    <li>• Social smiles and interaction</li>
+                                                    <li>• Exploring with all senses</li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-orange-50 p-4 rounded-lg">
+                                                <h4 class="font-semibold text-orange-800 mb-3">🚶 Toddlers (12 - 33 months)</h4>
+                                                <ul class="text-sm text-gray-700 space-y-2">
+                                                    <li>• Walking and running skills</li>
+                                                    <li>• Vocabulary expansion</li>
+                                                    <li>• Potty training readiness</li>
+                                                    <li>• Independence in eating</li>
+                                                    <li>• Social play with peers</li>
+                                                    <li>• Following simple instructions</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Activities Section -->
+                                <div id="infant-activities" class="infant-section hidden">
+                                    <div class="bg-white rounded-2xl p-6">
+                                        <h3 class="jungle-font text-2xl text-green-800 mb-4">Daily Activities 🎨</h3>
+                                        <div class="space-y-6">
+                                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                                <h4 class="font-semibold text-yellow-800 mb-3">🎵 Music & Movement</h4>
+                                                <p class="text-sm text-gray-700">Daily singing, dancing, and rhythm activities to develop coordination and language skills</p>
+                                            </div>
+                                            <div class="bg-green-50 p-4 rounded-lg">
+                                                <h4 class="font-semibold text-green-800 mb-3">📖 Story Time</h4>
+                                                <p class="text-sm text-gray-700">Interactive reading sessions with colorful books, puppets, and props to encourage language development</p>
+                                            </div>
+                                            <div class="bg-blue-50 p-4 rounded-lg">
+                                                <h4 class="font-semibold text-blue-800 mb-3">🌊 Sensory Exploration</h4>
+                                                <p class="text-sm text-gray-700">Safe sensory bins, water play, and texture exploration to stimulate cognitive development</p>
+                                            </div>
+                                            <div class="bg-purple-50 p-4 rounded-lg">
+                                                <h4 class="font-semibold text-purple-800 mb-3">🧩 Fine Motor Play</h4>
+                                                <p class="text-sm text-gray-700">Age-appropriate puzzles, stacking toys, and manipulatives to develop hand-eye coordination</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timon Classroom -->
+                <div id="timon-classroom" class="classroom-content hidden">
+                    <div class="bg-gradient-to-r from-orange-100 to-yellow-200 rounded-3xl shadow-xl p-8">
+                        <div class="text-center mb-8">
+                            <div class="text-6xl mb-4">🐾</div>
+                            <h2 class="jungle-font text-4xl text-orange-800">Timon's Playground (Toddlers)</h2>
+                            <p class="text-xl text-orange-700">12 months - 2 years</p>
+                        </div>
+                        
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <div class="bg-white rounded-2xl p-6">
+                                <h3 class="jungle-font text-2xl text-orange-800 mb-4">Daily Schedule 🕐</h3>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center py-2 border-b">
+                                        <span class="font-semibold">8:00 AM - 9:00 AM</span>
+                                        <span>Arrival & Free Play</span>
+                                    </div>
+                                    <div class="flex justify-between items-center py-2 border-b">
+                                        <span class="font-semibold">9:00 AM - 10:00 AM</span>
+                                        <span>Breakfast & Bottles</span>
+                                    </div>
+                                    <div class="flex justify-between items-center py-2 border-b">
+                                        <span class="font-semibold">10:00 AM - 11:30 AM</span>
+                                        <span>Morning Nap</span>
+                                    </div>
+                                    <div class="flex justify-between items-center py-2 border-b">
+                                        <span class="font-semibold">11:30 AM - 12:30 PM</span>
+                                        <span>Circle Time & Activities</span>
+                                    </div>
+                                    <div class="flex justify-between items-center py-2 border-b">
+                                        <span class="font-semibold">12:30 PM - 1:30 PM</span>
+                                        <span>Lunch Time</span>
+                                    </div>
+                                    <div class="flex justify-between items-center py-2 border-b">
+                                        <span class="font-semibold">1:30 PM - 3:30 PM</span>
+                                        <span>Afternoon Nap</span>
+                                    </div>
+                                    <div class="flex justify-between items-center py-2 border-b">
+                                        <span class="font-semibold">3:30 PM - 4:30 PM</span>
+                                        <span>Snack & Story Time</span>
+                                    </div>
+                                    <div class="flex justify-between items-center py-2 border-b">
+                                        <span class="font-semibold">4:30 PM - 5:00 PM</span>
+                                        <span>Outdoor Play & Exploration</span>
+                                    </div>
+                                    <div class="flex justify-between items-center py-2">
+                                        <span class="font-semibold">5:00 PM - 6:00 PM</span>
+                                        <span>Departure</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded-2xl p-6">
+                                <h3 class="jungle-font text-2xl text-orange-800 mb-4">Curriculum Focus 📚</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-orange-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-orange-800 mb-2">🚶 Gross Motor Skills</h4>
+                                        <p class="text-sm">Walking, climbing, running, and balance activities for growing toddlers</p>
+                                    </div>
+                                    <div class="bg-yellow-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-yellow-800 mb-2">✋ Fine Motor Development</h4>
+                                        <p class="text-sm">Stacking, sorting, finger painting, and manipulative toys</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-800 mb-2">🗣️ Language Explosion</h4>
+                                        <p class="text-sm">Vocabulary building through songs, books, and conversation</p>
+                                    </div>
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-800 mb-2">🤝 Social Skills</h4>
+                                        <p class="text-sm">Learning to share, take turns, and interact with peers</p>
+                                    </div>
+                                    <div class="bg-purple-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-800 mb-2">🚽 Independence</h4>
+                                        <p class="text-sm">Potty training support and self-help skills development</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pumba Classroom -->
+                <div id="pumba-classroom" class="classroom-content hidden">
+                    <div class="bg-gradient-to-r from-red-100 to-pink-200 rounded-3xl shadow-xl p-8">
+                        <div class="text-center mb-8">
+                            <div class="text-6xl mb-4">🐗</div>
+                            <h2 class="jungle-font text-4xl text-red-800">Pumba's Academy (Preschool)</h2>
+                            <p class="text-xl text-red-700">2 - 5 years</p>
+                        </div>
+                        
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <div class="bg-white rounded-2xl p-6">
+                                <h3 class="jungle-font text-2xl text-red-800 mb-4">Our Preschooler's Daily Adventure 🌟</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-yellow-50 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-yellow-800">🌞 8:00 AM - 8:30 AM</span>
+                                            <span class="text-yellow-600 font-medium">Good Morning & Gentle Arrival</span>
+                                        </div>
+                                        <p class="text-sm text-gray-700">Warm greetings, quiet free play with puzzles, books, and drawing materials as children settle in</p>
+                                    </div>
+                                    
+                                    <div class="bg-orange-50 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-orange-800">🥣 8:30 AM - 9:00 AM</span>
+                                            <span class="text-orange-600 font-medium">Yummy Breakfast Time!</span>
+                                        </div>
+                                        <p class="text-sm text-gray-700">Nutritious breakfast served family-style, encouraging independence and conversation</p>
+                                    </div>
+                                    
+                                    <div class="bg-blue-50 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-blue-800">📚 9:00 AM - 9:30 AM</span>
+                                            <span class="text-blue-600 font-medium">Morning Circle Time</span>
+                                        </div>
+                                        <p class="text-sm text-gray-700">Greetings, calendar, weather, songs, fingerplays, and interactive story time</p>
+                                    </div>
+                                    
+                                    <div class="bg-green-50 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-green-800">🧠 9:30 AM - 10:15 AM</span>
+                                            <span class="text-green-600 font-medium">Focused Lesson & Small Groups</span>
+                                        </div>
+                                        <p class="text-sm text-gray-700">Teacher-led lessons and small group activities with individualized attention</p>
+                                    </div>
+                                    
+                                    <div class="bg-purple-50 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-purple-800">🎨 10:15 AM - 11:00 AM</span>
+                                            <span class="text-purple-600 font-medium">Arts & Crafts / Sensory Fun</span>
+                                        </div>
+                                        <p class="text-sm text-gray-700">Creative expression through art projects, playdough, sensory bins, and construction</p>
+                                    </div>
+                                    
+                                    <div class="bg-teal-50 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-teal-800">🤸‍♀️ 11:00 AM - 11:45 AM</span>
+                                            <span class="text-teal-600 font-medium">Outdoor Play / Gross Motor Fun!</span>
+                                        </div>
+                                        <p class="text-sm text-gray-700">Playground time or indoor movement activities like dancing and obstacle courses</p>
+                                    </div>
+                                    
+                                    <div class="bg-pink-50 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-pink-800">🍎 11:45 AM - 12:15 PM</span>
+                                            <span class="text-pink-600 font-medium">Snack & Hydration</span>
+                                        </div>
+                                        <p class="text-sm text-gray-700">Healthy snack time with water and handwashing</p>
+                                    </div>
+                                    
+                                    <div class="bg-red-50 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-red-800">🍽️ 12:15 PM - 1:00 PM</span>
+                                            <span class="text-red-600 font-medium">Delicious Lunch!</span>
+                                        </div>
+                                        <p class="text-sm text-gray-700">Nutritious lunch promoting self-help skills and good table manners</p>
+                                    </div>
+                                    
+                                    <div class="bg-indigo-50 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-indigo-800">🤫 1:00 PM - 1:30 PM</span>
+                                            <span class="text-indigo-600 font-medium">Quiet Time & Story Time</span>
+                                        </div>
+                                        <p class="text-sm text-gray-700">Calming stories and soft music to help children relax and wind down</p>
+                                    </div>
+                                    
+                                    <div class="bg-gray-50 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-gray-800">💤 1:30 PM - 3:00 PM</span>
+                                            <span class="text-gray-600 font-medium">Nap Time / Quiet Rest</span>
+                                        </div>
+                                        <p class="text-sm text-gray-700">Individualized rest time with quiet activities for non-sleepers</p>
+                                    </div>
+                                    
+                                    <div class="bg-emerald-50 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-emerald-800">👋 3:00 PM - 3:30 PM</span>
+                                            <span class="text-emerald-600 font-medium">Wake Up & Afternoon Snack</span>
+                                        </div>
+                                        <p class="text-sm text-gray-700">Gradual wake-up time with refreshing snack and water</p>
+                                    </div>
+                                    
+                                    <div class="bg-cyan-50 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-cyan-800">🧸 3:30 PM - 4:30 PM</span>
+                                            <span class="text-cyan-600 font-medium">Choice Time & Free Play</span>
+                                        </div>
+                                        <p class="text-sm text-gray-700">Learning centers including dramatic play, blocks, puzzles, art easel, and science table</p>
+                                    </div>
+                                    
+                                    <div class="bg-amber-50 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-amber-800">🧩 4:30 PM - 5:15 PM</span>
+                                            <span class="text-amber-600 font-medium">Fine Motor Skill Development</span>
+                                        </div>
+                                        <p class="text-sm text-gray-700">Building blocks, threading beads, lacing cards, board games, and complex puzzles</p>
+                                    </div>
+                                    
+                                    <div class="bg-lime-50 p-3 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-lime-800">🌳 5:15 PM - 6:00 PM</span>
+                                            <span class="text-lime-600 font-medium">Outdoor Fun & Dismissal</span>
+                                        </div>
+                                        <p class="text-sm text-gray-700">Final outdoor play or quiet activities while awaiting pickup with daily updates</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded-2xl p-6">
+                                <h3 class="jungle-font text-2xl text-red-800 mb-4">Curriculum Focus 📚</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-red-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-red-800 mb-2">📖 Literacy Development</h4>
+                                        <p class="text-sm">ABCs (letter recognition, uppercase/lowercase), letter sounds (phonics), handwriting (pre-writing strokes, letter tracing), beginning reading (rhyming, sight words, early phonics), parts of a book, and learning to spell their name</p>
+                                    </div>
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-800 mb-2">🔢 Numeracy Skills</h4>
+                                        <p class="text-sm">Numbers (recognition, counting, one-to-one correspondence), shapes (basic geometric shapes), colors, basic math (simple addition/subtraction concepts, patterns, sorting)</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-800 mb-2">🌍 Thematic Learning</h4>
+                                        <p class="text-sm">Animals, community helpers, five senses, emergency numbers, and all about the child</p>
+                                    </div>
+                                    <div class="bg-yellow-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-yellow-800 mb-2">❤️ Social-Emotional Development</h4>
+                                        <p class="text-sm">Sharing, cooperation, self-awareness, and safety skills</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zazu Classroom -->
+                <div id="zazu-classroom" class="classroom-content hidden">
+                    <div class="bg-gradient-to-r from-blue-100 to-purple-200 rounded-3xl shadow-xl p-8">
+                        <div class="text-center mb-8">
+                            <div class="text-6xl mb-4">🦜</div>
+                            <h2 class="jungle-font text-4xl text-blue-800">Zazu's After School Hub</h2>
+                            <p class="text-xl text-blue-700">School Age (5-12 years)</p>
+                        </div>
+                        
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <div class="bg-white rounded-2xl p-6">
+                                <h3 class="jungle-font text-2xl text-blue-800 mb-4">Daily Schedule 🕐</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="font-semibold text-blue-800">3:00 PM - 3:30 PM</span>
+                                            <span class="text-blue-600">Arrival & Decompression</span>
+                                        </div>
+                                        <ul class="text-sm text-gray-700 space-y-1">
+                                            <li>• Healthy snack time & socialization</li>
+                                            <li>• Quiet table activities (drawing, reading, puzzles)</li>
+                                            <li>• Teacher check-in about their school day</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="font-semibold text-green-800">3:30 PM - 4:30 PM</span>
+                                            <span class="text-green-600">Choice Time & Exploration</span>
+                                        </div>
+                                        <ul class="text-sm text-gray-700 space-y-1">
+                                            <li>• The "Maker Space" - Creative projects</li>
+                                            <li>• The "Lego Lab" - Building challenges</li>
+                                            <li>• The "Game Nook" - Board games & puzzles</li>
+                                            <li>• The "Reading Corner" - Diverse book selection</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="bg-yellow-50 p-4 rounded-lg">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="font-semibold text-yellow-800">4:30 PM - 5:15 PM</span>
+                                            <span class="text-yellow-600">Homework Hub & Structured Play</span>
+                                        </div>
+                                        <ul class="text-sm text-gray-700 space-y-1">
+                                            <li>• Homework assistance with teacher support</li>
+                                            <li>• Brain teasers & logic puzzles</li>
+                                            <li>• Strategy games (chess, checkers)</li>
+                                            <li>• Advanced building challenges</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="bg-orange-50 p-4 rounded-lg">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="font-semibold text-orange-800">5:15 PM - 6:00 PM</span>
+                                            <span class="text-orange-600">Outdoor Fun & Wind-Down</span>
+                                        </div>
+                                        <ul class="text-sm text-gray-700 space-y-1">
+                                            <li>• Supervised outdoor play & group games</li>
+                                            <li>• Indoor quiet activities (bad weather)</li>
+                                            <li>• Group cleanup time</li>
+                                            <li>• Dismissal with daily updates</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-blue-800 mb-2">🚌 Transportation</h4>
+                                    <p class="text-sm">We provide pickup service from local elementary schools</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded-2xl p-6">
+                                <h3 class="jungle-font text-2xl text-blue-800 mb-4">Program Focus 📚</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-blue-800 mb-2">📝 Homework Support</h4>
+                                        <p class="text-sm">Quiet study time with teacher assistance and guidance</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-green-800 mb-2">🏃 Physical Activities</h4>
+                                        <p class="text-sm">Sports, games, and outdoor play to stay active</p>
+                                    </div>
+                                    <div class="bg-yellow-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-yellow-800 mb-2">🎨 Enrichment Activities</h4>
+                                        <p class="text-sm">Arts, crafts, STEM projects, and special interest clubs</p>
+                                    </div>
+                                    <div class="bg-purple-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-purple-800 mb-2">👥 Social Development</h4>
+                                        <p class="text-sm">Building friendships and developing leadership skills</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-orange-800 mb-2">🎯 Life Skills</h4>
+                                        <p class="text-sm">Responsibility, time management, and independence</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Calendar & Gallery Page -->
+    <div id="calendar" class="page hidden">
+        <section class="py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h1 class="jungle-font text-5xl text-center text-green-800 mb-12">Calendar & Gallery 📅📸</h1>
+                
+                <!-- Calendar Section -->
+                <div class="bg-white rounded-3xl shadow-xl p-8 mb-12">
+                    <h2 class="jungle-font text-3xl text-orange-800 mb-8 text-center">Upcoming Events 🎉</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-green-100 rounded-2xl p-6">
+                            <div class="text-3xl mb-3">👥</div>
+                            <h3 class="font-bold text-lg mb-2">Parent Meeting</h3>
+                            <p class="text-green-700 font-semibold">August 20, 2025</p>
+                            <p class="text-sm text-gray-600 mt-2">Important meeting for all parents and guardians</p>
+                        </div>
+                        
+                        <div class="bg-yellow-100 rounded-2xl p-6">
+                            <div class="text-3xl mb-3">🔄</div>
+                            <h3 class="font-bold text-lg mb-2">Fall Reset</h3>
+                            <p class="text-yellow-700 font-semibold">August 25 - September 1, 2025</p>
+                            <p class="text-sm text-gray-600 mt-2">Preparation week for the new school year</p>
+                        </div>
+                        
+                        <div class="bg-blue-100 rounded-2xl p-6">
+                            <div class="text-3xl mb-3">🎒</div>
+                            <h3 class="font-bold text-lg mb-2">Welcome Back</h3>
+                            <p class="text-blue-700 font-semibold">September 2, 2025 (Tuesday)</p>
+                            <p class="text-sm text-gray-600 mt-2">First day back from fall reset</p>
+                        </div>
+                        
+                        <div class="bg-orange-100 rounded-2xl p-6">
+                            <div class="text-3xl mb-3">🦃</div>
+                            <h3 class="font-bold text-lg mb-2">Thanksgiving Break</h3>
+                            <p class="text-orange-700 font-semibold">November 27-28, 2025</p>
+                            <p class="text-sm text-gray-600 mt-2">Closed for Thanksgiving holiday</p>
+                        </div>
+                        
+                        <div class="bg-red-100 rounded-2xl p-6">
+                            <div class="text-3xl mb-3">❄️</div>
+                            <h3 class="font-bold text-lg mb-2">Winter Break</h3>
+                            <p class="text-red-700 font-semibold">December 23, 2025 - January 3, 2026</p>
+                            <p class="text-sm text-gray-600 mt-2">Last day Dec 23rd, return January 6th</p>
+                        </div>
+                        
+                        <div class="bg-purple-100 rounded-2xl p-6">
+                            <div class="text-3xl mb-3">🎯</div>
+                            <h3 class="font-bold text-lg mb-2">MLK Day</h3>
+                            <p class="text-purple-700 font-semibold">January 19, 2026 (Monday)</p>
+                            <p class="text-sm text-gray-600 mt-2">Closed for Martin Luther King Jr. Day</p>
+                        </div>
+                        
+                        <div class="bg-pink-100 rounded-2xl p-6">
+                            <div class="text-3xl mb-3">✝️</div>
+                            <h3 class="font-bold text-lg mb-2">Easter Break</h3>
+                            <p class="text-pink-700 font-semibold">April 3 & 6, 2026</p>
+                            <p class="text-sm text-gray-600 mt-2">Closed Good Friday & Easter Monday</p>
+                        </div>
+                        
+                        <div class="bg-indigo-100 rounded-2xl p-6">
+                            <div class="text-3xl mb-3">🇺🇸</div>
+                            <h3 class="font-bold text-lg mb-2">Memorial Day</h3>
+                            <p class="text-indigo-700 font-semibold">May 25, 2026 (Monday)</p>
+                            <p class="text-sm text-gray-600 mt-2">Closed for Memorial Day</p>
+                        </div>
+                        
+                        <div class="bg-teal-100 rounded-2xl p-6">
+                            <div class="text-3xl mb-3">☀️</div>
+                            <h3 class="font-bold text-lg mb-2">Summer Session Starts</h3>
+                            <p class="text-teal-700 font-semibold">June 15, 2026</p>
+                            <p class="text-sm text-gray-600 mt-2">Beginning of summer programming</p>
+                        </div>
+                        
+                        <div class="bg-emerald-100 rounded-2xl p-6">
+                            <div class="text-3xl mb-3">🎉</div>
+                            <h3 class="font-bold text-lg mb-2">Juneteenth</h3>
+                            <p class="text-emerald-700 font-semibold">June 19, 2026 (Friday)</p>
+                            <p class="text-sm text-gray-600 mt-2">Closed for Juneteenth celebration</p>
+                        </div>
+                        
+                        <div class="bg-red-200 rounded-2xl p-6">
+                            <div class="text-3xl mb-3">🎆</div>
+                            <h3 class="font-bold text-lg mb-2">Independence Day</h3>
+                            <p class="text-red-800 font-semibold">July 3, 2026 (Friday)</p>
+                            <p class="text-sm text-gray-600 mt-2">Closed for Independence Day observation</p>
+                        </div>
+                        
+                        <div class="bg-amber-100 rounded-2xl p-6">
+                            <div class="text-3xl mb-3">🏫</div>
+                            <h3 class="font-bold text-lg mb-2">Fall Start</h3>
+                            <p class="text-amber-700 font-semibold">August 31, 2026</p>
+                            <p class="text-sm text-gray-600 mt-2">Welcome back after summer break</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Section -->
+                <div class="bg-gradient-to-r from-green-100 to-yellow-100 rounded-3xl shadow-xl p-8">
+                    <h2 class="jungle-font text-3xl text-green-800 mb-8 text-center">Our Jungle Adventures 📸</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-2xl p-4 shadow-lg">
+                            <div class="rounded-xl h-48 overflow-hidden mb-4">
+                                <img src="images/aquarium1.jpeg" alt="Children exploring aquarium" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-semibold text-center">Aquarium Adventure</h3>
+                            <p class="text-sm text-gray-600 text-center">Discovering marine life and ocean wonders</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-4 shadow-lg">
+                            <div class="rounded-xl h-48 overflow-hidden mb-4">
+                                <img src="images/painting.jpeg" alt="Children painting and creating art" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-semibold text-center">Art Exploration</h3>
+                            <p class="text-sm text-gray-600 text-center">Creative expression through painting and art</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-4 shadow-lg">
+                            <div class="rounded-xl h-48 overflow-hidden mb-4">
+                                <img src="images/riding.jpeg" alt="Children enjoying riding activities" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-semibold text-center">Active Play</h3>
+                            <p class="text-sm text-gray-600 text-center">Building coordination and having fun</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-4 shadow-lg">
+                            <div class="rounded-xl h-48 overflow-hidden mb-4">
+                                <img src="images/legos.jpeg" alt="Children building with Legos" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-semibold text-center">Building & Construction</h3>
+                            <p class="text-sm text-gray-600 text-center">Developing fine motor skills with Legos</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-4 shadow-lg">
+                            <div class="rounded-xl h-48 overflow-hidden mb-4">
+                                <img src="images/lunch.jpeg" alt="Children enjoying healthy lunch" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-semibold text-center">Healthy Eating</h3>
+                            <p class="text-sm text-gray-600 text-center">Learning about nutrition and healthy choices</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-4 shadow-lg">
+                            <div class="rounded-xl h-48 overflow-hidden mb-4">
+                                <img src="images/math.jpeg" alt="Children learning math concepts" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-semibold text-center">Math Learning</h3>
+                            <p class="text-sm text-gray-600 text-center">Exploring numbers and mathematical concepts</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-4 shadow-lg">
+                            <div class="rounded-xl h-48 overflow-hidden mb-4">
+                                <img src="images/magnettiles.jpeg" alt="Children playing with magnetic tiles" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-semibold text-center">STEM Discovery</h3>
+                            <p class="text-sm text-gray-600 text-center">Building and engineering with magnetic tiles</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-4 shadow-lg">
+                            <div class="rounded-xl h-48 overflow-hidden mb-4">
+                                <img src="images/micah puzzle.jpeg" alt="Child working on puzzle" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-semibold text-center">Problem Solving</h3>
+                            <p class="text-sm text-gray-600 text-center">Developing critical thinking with puzzles</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-4 shadow-lg">
+                            <div class="rounded-xl h-48 overflow-hidden mb-4">
+                                <img src="images/ericrobot.jpeg" alt="Child with educational robot" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="font-semibold text-center">Technology Learning</h3>
+                            <p class="text-sm text-gray-600 text-center">Exploring robotics and technology</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <p class="text-gray-600 italic">Note: Actual student photos would be displayed here with proper permissions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Staff Page -->
+    <div id="staff" class="page hidden">
+        <section class="py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h1 class="jungle-font text-5xl text-center text-green-800 mb-12">Meet Our Pride 👥</h1>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Director -->
+                    <div class="bg-white rounded-3xl shadow-xl p-6">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg border-4 border-yellow-300 mb-4">
+                            <img src="images/Stefanie.jpeg" alt="Stefanie Boyd" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="jungle-font text-2xl text-center text-orange-800 mb-2">Stefanie Boyd</h3>
+                        <p class="text-center text-orange-600 font-semibold mb-4">Owner & Director</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-green-100 p-2 rounded">
+                                <span class="font-semibold">🎓 Education:</span> CDA Certified
+                            </div>
+                            <div class="bg-yellow-100 p-2 rounded">
+                                <span class="font-semibold">⭐ Experience:</span> 20+ years in childcare
+                            </div>
+                            <div class="bg-blue-100 p-2 rounded">
+                                <span class="font-semibold">🏆 Certifications:</span> CPR, CDA
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Infant Teacher -->
+                    <div class="bg-white rounded-3xl shadow-xl p-6">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg border-4 border-green-300 mb-4">
+                            <img src="images/Kennedy.jpeg" alt="Kennedy Warr" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="jungle-font text-2xl text-center text-green-800 mb-2">Kennedy Warr</h3>
+                        <p class="text-center text-green-600 font-semibold mb-4">Infant Room Lead Teacher</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-green-100 p-2 rounded">
+                                <span class="font-semibold">🎓 Education:</span> Working on Associate's in Childcare
+                            </div>
+                            <div class="bg-yellow-100 p-2 rounded">
+                                <span class="font-semibold">⭐ Experience:</span> 4 years experience
+                            </div>
+                            <div class="bg-blue-100 p-2 rounded">
+                                <span class="font-semibold">🏆 Certifications:</span> CPR
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Toddler Teacher -->
+                    <div class="bg-white rounded-3xl shadow-xl p-6">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg border-4 border-orange-300 mb-4">
+                            <img src="images/Kathy.jpeg" alt="Kathy Bailey" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="jungle-font text-2xl text-center text-orange-800 mb-2">Kathy Bailey</h3>
+                        <p class="text-center text-orange-600 font-semibold mb-4">Toddler Room Lead Teacher</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-green-100 p-2 rounded">
+                                <span class="font-semibold">🎓 Education:</span> Early Childhood Experience
+                            </div>
+                            <div class="bg-yellow-100 p-2 rounded">
+                                <span class="font-semibold">⭐ Experience:</span> 10+ years experience
+                            </div>
+                            <div class="bg-blue-100 p-2 rounded">
+                                <span class="font-semibold">🏆 Certifications:</span> CPR
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Staff Member -->
+                    <div class="bg-white rounded-3xl shadow-xl p-6">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg border-4 border-red-300 mb-4">
+                            <img src="images/Heaven.jpeg" alt="Heaven Harris" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="jungle-font text-2xl text-center text-red-800 mb-2">Heaven Harris</h3>
+                        <p class="text-center text-red-600 font-semibold mb-4">Co-Teacher (All Rooms - Mainly Infant)</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-green-100 p-2 rounded">
+                                <span class="font-semibold">🎓 Education:</span> Currently working on CDA
+                            </div>
+                            <div class="bg-yellow-100 p-2 rounded">
+                                <span class="font-semibold">⭐ Experience:</span> 4 years experience
+                            </div>
+                            <div class="bg-blue-100 p-2 rounded">
+                                <span class="font-semibold">🏆 Certifications:</span> CPR
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Staff Member -->
+                    <div class="bg-white rounded-3xl shadow-xl p-6">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg border-4 border-blue-300 mb-4">
+                            <img src="images/Keir.jpeg" alt="Keir Warr" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="jungle-font text-2xl text-center text-blue-800 mb-2">Keir Warr</h3>
+                        <p class="text-center text-blue-600 font-semibold mb-4">Preschool Room Lead Teacher</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-green-100 p-2 rounded">
+                                <span class="font-semibold">🎓 Education:</span> Finishing Associate's in Childcare
+                            </div>
+                            <div class="bg-yellow-100 p-2 rounded">
+                                <span class="font-semibold">⭐ Experience:</span> 5 years experience
+                            </div>
+                            <div class="bg-blue-100 p-2 rounded">
+                                <span class="font-semibold">🏆 Certifications:</span> CDA, CPR
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Staff Qualifications -->
+                <div class="mt-12 bg-gradient-to-r from-green-100 to-yellow-100 rounded-3xl shadow-xl p-8">
+                    <h2 class="jungle-font text-3xl text-center text-green-800 mb-8">Our Commitment to Excellence 🌟</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="bg-green-200 rounded-full w-16 h-16 mx-auto flex items-center justify-center text-2xl mb-4">🎓</div>
+                            <h3 class="font-bold mb-2">Qualified Educators</h3>
+                            <p class="text-sm text-gray-700">All teachers have degrees or certifications in early childhood education</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-yellow-200 rounded-full w-16 h-16 mx-auto flex items-center justify-center text-2xl mb-4">🚑</div>
+                            <h3 class="font-bold mb-2">Safety Certified</h3>
+                            <p class="text-sm text-gray-700">CPR and First Aid certified staff for your peace of mind</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-orange-200 rounded-full w-16 h-16 mx-auto flex items-center justify-center text-2xl mb-4">📚</div>
+                            <h3 class="font-bold mb-2">Ongoing Training</h3>
+                            <p class="text-sm text-gray-700">Regular professional development and continuing education</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-blue-200 rounded-full w-16 h-16 mx-auto flex items-center justify-center text-2xl mb-4">❤️</div>
+                            <h3 class="font-bold mb-2">Passionate Care</h3>
+                            <p class="text-sm text-gray-700">Dedicated to nurturing each child's unique potential</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page hidden">
+        <section class="py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h1 class="jungle-font text-5xl text-center text-green-800 mb-12">Contact Our Pride 📞</h1>
+                
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-white rounded-3xl shadow-xl p-8">
+                        <h2 class="jungle-font text-3xl text-green-800 mb-6">Send Us a Message 💌</h2>
+                        <p class="text-gray-600 mb-6">Have questions about enrollment, our programs, or want to schedule a tour? We'd love to hear from you!</p>
+                        
+                        <form id="contactForm" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Parent/Guardian Name *</label>
+                                    <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
+                                    <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                                <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Child's Name</label>
+                                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Child's Age</label>
+                                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                        <option value="">Select Age</option>
+                                        <option value="infant">6 weeks - 12 months (Simba)</option>
+                                        <option value="toddler">12 months - 2 years (Timon)</option>
+                                        <option value="preschool">2 - 5 years (Pumba)</option>
+                                        <option value="schoolage">5 - 12 years (Zazu)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Inquiry Type</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                    <option value="">Select Type</option>
+                                    <option value="enrollment">Enrollment Information</option>
+                                    <option value="tour">Schedule a Tour</option>
+                                    <option value="programs">Program Questions</option>
+                                    <option value="general">General Information</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Message *</label>
+                                <textarea required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Tell us about your needs, questions, or how we can help..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-yellow-500 hover:from-green-600 hover:to-yellow-600 text-white font-bold py-4 px-6 rounded-lg transition-all transform hover:scale-105">
+                                🌟 Send Message
+                            </button>
+                        </form>
+                        
+                        <div id="formMessage" class="hidden mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                            <p class="font-semibold">Demo Form Submitted! 🎉</p>
+                            <p class="text-sm">This is a sample form. In a real website, your message would be sent to the school.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Information -->
+                    <div class="space-y-8">
+                        <!-- Contact Details -->
+                        <div class="bg-gradient-to-r from-green-100 to-yellow-100 rounded-3xl shadow-xl p-8">
+                            <h2 class="jungle-font text-3xl text-green-800 mb-6">Get In Touch 📍</h2>
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-green-200 rounded-full w-12 h-12 flex items-center justify-center text-xl">📍</div>
+                                    <div>
+                                        <p class="font-semibold">Address</p>
+                                        <p class="text-gray-700">26140 W 7 Mile Road<br>Redford, MI 48240</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-yellow-200 rounded-full w-12 h-12 flex items-center justify-center text-xl">📞</div>
+                                    <div>
+                                        <p class="font-semibold">Phone</p>
+                                        <p class="text-gray-700">(313) 694-3140</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-orange-200 rounded-full w-12 h-12 flex items-center justify-center text-xl">📧</div>
+                                    <div>
+                                        <p class="font-semibold">Email</p>
+                                        <p class="text-gray-700">hakunamatatahchildcare@yahoo.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-purple-200 rounded-full w-12 h-12 flex items-center justify-center text-xl">🌐</div>
+                                    <div>
+                                        <p class="font-semibold">Website</p>
+                                        <p class="text-gray-700">hakunamatatahchildcare.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-blue-200 rounded-full w-12 h-12 flex items-center justify-center text-xl">🕐</div>
+                                    <div>
+                                        <p class="font-semibold">Hours</p>
+                                        <p class="text-gray-700">Monday - Friday: 8:00 AM - 6:00 PM<br><span class="text-sm italic">*Extended hours available for families in need (rates may vary)</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Links -->
+                        <div class="bg-white rounded-3xl shadow-xl p-8">
+                            <h2 class="jungle-font text-3xl text-orange-800 mb-6">Quick Actions 🚀</h2>
+                            <div class="space-y-4">
+                                <button onclick="downloadEnrollmentPacket()" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2">
+                                    <span>📥</span>
+                                    <span>Download Enrollment Packet</span>
+                                </button>
+                                
+                                <button onclick="showPage('calendar')" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2">
+                                    <span>📅</span>
+                                    <span>View Calendar & Events</span>
+                                </button>
+                                
+                                <button onclick="showPage('classrooms')" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2">
+                                    <span>🏫</span>
+                                    <span>Explore Our Classrooms</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media -->
+                        <div class="bg-gradient-to-r from-purple-100 to-pink-100 rounded-3xl shadow-xl p-8">
+                            <h2 class="jungle-font text-3xl text-purple-800 mb-6">Follow Our Adventures 📱</h2>
+                            <div class="flex justify-center space-x-4">
+                                <div class="bg-blue-500 hover:bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center cursor-pointer transition-colors">
+                                    📘
+                                </div>
+                                <div class="bg-pink-500 hover:bg-pink-600 text-white rounded-full w-12 h-12 flex items-center justify-center cursor-pointer transition-colors">
+                                    📷
+                                </div>
+                                <div class="bg-blue-400 hover:bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center cursor-pointer transition-colors">
+                                    🐦
+                                </div>
+                            </div>
+                            <p class="text-center text-gray-600 mt-4 text-sm">Stay connected for daily updates, photos, and jungle fun!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="jungle-gradient text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="text-4xl">🦁</div>
+                        <div>
+                            <h3 class="jungle-font text-2xl">Hakuna Matatah</h3>
+                            <p class="text-yellow-200">Preschool & Childcare</p>
+                        </div>
+                    </div>
+                    <p class="text-yellow-100">Where every day is an adventure in learning, growing, and discovering the circle of life!</p>
+                </div>
+                
+                <div>
+                    <h4 class="jungle-font text-xl mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <button onclick="showPage('welcome')" class="block text-yellow-200 hover:text-white transition-colors">Home</button>
+                        <button onclick="showPage('enrollment')" class="block text-yellow-200 hover:text-white transition-colors">Enrollment</button>
+                        <button onclick="showPage('classrooms')" class="block text-yellow-200 hover:text-white transition-colors">Classrooms</button>
+                        <button onclick="showPage('staff')" class="block text-yellow-200 hover:text-white transition-colors">Staff</button>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="jungle-font text-xl mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-yellow-200">
+                        <p>📍 26140 W 7 Mile Road, Redford, MI 48240</p>
+                        <p>📞 (313) 694-3140</p>
+                        <p>📧 hakunamatatahchildcare@yahoo.com</p>
+                        <p>🌐 hakunamatatahchildcare.com</p>
+                        <p>🕐 Mon-Fri: 8:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-yellow-400 mt-8 pt-8 text-center">
+                <p class="text-yellow-200">&copy; 2024 Hakuna Matatah Preschool & Childcare. All rights reserved. 🌟</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page Navigation
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active-page');
+                page.classList.add('hidden');
+            });
+            
+            // Show selected page
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.remove('hidden');
+                selectedPage.classList.add('active-page', 'fade-in');
+            }
+            
+            // Close mobile menu if open
+            document.getElementById('mobileMenu').classList.add('hidden');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Classroom Navigation
+        function showClassroom(classroomId) {
+            // Hide all classroom content
+            const classrooms = document.querySelectorAll('.classroom-content');
+            classrooms.forEach(classroom => {
+                classroom.classList.add('hidden');
+            });
+            
+            // Show selected classroom
+            const selectedClassroom = document.getElementById(classroomId + '-classroom');
+            if (selectedClassroom) {
+                selectedClassroom.classList.remove('hidden');
+                selectedClassroom.classList.add('fade-in');
+            }
+            
+            // Update button styles
+            const navButtons = document.querySelectorAll('.classroom-nav');
+            navButtons.forEach(button => {
+                button.classList.remove('ring-4', 'ring-white');
+            });
+            
+            // Add active style to clicked button
+            event.target.classList.add('ring-4', 'ring-white');
+        }
+
+        // Download Enrollment Packet
+        function downloadEnrollmentPacket() {
+            // Create download link for the PDF
+            const link = document.createElement('a');
+            link.href = 'documents/Complete Enrollment Packet (1).pdf';  // Path to your PDF file
+            link.download = 'Hakuna_Matatah_Enrollment_Packet.pdf';
+            link.target = '_blank';
+            
+            // Trigger download
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show confirmation message
+            setTimeout(() => {
+                alert('📥 Enrollment packet download started! 🎉\n\n' +
+                      'If the download doesn\'t start automatically:\n' +
+                      '• Check your browser\'s download folder\n' +
+                      '• Allow pop-ups for this site\n' +
+                      '• Contact us at (313) 694-3140 for assistance');
+            }, 500);
+        }
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const messageDiv = document.getElementById('formMessage');
+            messageDiv.classList.remove('hidden');
+            
+            // Reset form
+            this.reset();
+            
+            // Scroll to message
+            messageDiv.scrollIntoView({ behavior: 'smooth' });
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                messageDiv.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Infant Section Navigation
+        function showInfantSection(sectionId) {
+            // Hide all infant sections
+            const sections = document.querySelectorAll('.infant-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section
+            const selectedSection = document.getElementById('infant-' + sectionId);
+            if (selectedSection) {
+                selectedSection.classList.remove('hidden');
+                selectedSection.classList.add('fade-in');
+            }
+            
+            // Update button styles
+            const navButtons = document.querySelectorAll('.infant-nav-btn');
+            navButtons.forEach(button => {
+                button.classList.remove('bg-green-500', 'text-white');
+                button.classList.add('bg-gray-200', 'text-gray-700');
+            });
+            
+            // Add active style to clicked button
+            event.target.classList.remove('bg-gray-200', 'text-gray-700');
+            event.target.classList.add('bg-green-500', 'text-white');
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show Simba classroom by default when classrooms page loads
+            showClassroom('simba');
+            // Show schedule section by default for infant classroom
+            showInfantSection('schedule');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'974d4d7d83ec26ee',t:'MTc1NjE0ODExNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+<section id="staff" class="max-w-6xl mx-auto px-4 py-12">
+  <h2 class="jungle text-3xl text-green-800 mb-8 text-center">Meet the Team 👋</h2>
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+      <div class="bg-white rounded-2xl shadow p-6 text-center">
+        <img src="images/heaven.jpg" alt="Heaven" class="w-32 h-32 rounded-full object-cover mx-auto shadow mb-4">
+        <h3 class="font-bold">Heaven</h3>
+        <p class="text-sm text-gray-600">Infant Room Co-Teacher</p>
+      </div>
+
+  </div>
+</section>
+
+</body>
+</html>
