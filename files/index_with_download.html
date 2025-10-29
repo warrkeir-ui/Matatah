@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hakuna Matatah Preschool & Childcare</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-yellow-50">
+  <section id="enrollment" class="py-16">
+    <div class="text-center">
+      <div class="bg-white rounded-3xl shadow-xl p-8">
+        <h2 class="jungle-font text-3xl text-green-800 mb-6">Ready to Enroll? 📄</h2>
+        <p class="text-lg text-gray-700 mb-8">
+          Download our complete enrollment packet to get started on your child's jungle adventure!
+        </p>
+        <!-- Download Button -->
+        <button onclick="downloadEnrollmentPacket()"
+          class="bg-gradient-to-r from-green-500 to-yellow-500 hover:from-green-600 hover:to-yellow-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 shadow-lg">
+          📥 Download Enrollment Packet
+        </button>
+
+        <!-- Fallback Direct Link -->
+        <div class="mt-4">
+          <a href="Complete-Enrollment-Packet.pdf" download
+            class="text-sm font-semibold underline text-green-700 hover:text-green-900">
+            Having trouble? Click here to download directly
+          </a>
+        </div>
+        <p class="text-sm text-gray-600 mt-4">
+          Includes application, health forms, emergency contacts, and policies.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function downloadEnrollmentPacket() {
+      const link = document.createElement('a');
+      link.href = 'Complete-Enrollment-Packet.pdf';
+      link.download = 'Hakuna-Matatah-Enrollment-Packet.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
